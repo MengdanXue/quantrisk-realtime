@@ -1,6 +1,7 @@
 # quantrisk-realtime
 
-![python](https://img.shields.io/badge/python-3.12%20tested-blue)
+![python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)
+[![tests](https://github.com/MengdanXue/quantrisk-realtime/actions/workflows/tests.yml/badge.svg)](https://github.com/MengdanXue/quantrisk-realtime/actions/workflows/tests.yml)
 [![license](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
 
 Real-time trading analytics — option pricing and Greeks, volatility surfaces, risk monitors, portfolio construction, execution analytics, signal generation — plus market-data and exchange adapters, extracted from the author's private trading-system prototype (TraderX / QuantRiskPro).
@@ -56,7 +57,7 @@ pytest -q -m "not performance"     # correctness suite
 pytest -q -m performance           # wall-clock benchmarks (machine-dependent)
 ```
 
-On 2026-11-12, in a fresh Python 3.12 environment with `.[dev]`: **3416 passed, 3 skipped** (the three skips are timing-sensitive stop-loss tests marked as such in the host) and **13 benchmarks passed**. The correctness suite needs no database or API key, and no network: it also passes with every outbound connection blocked (checked the same day); the realtime tests set `ALLOW_MOCK_AGENT_DATA` for themselves, because they exercise subscription, broadcasting and bookkeeping on simulated providers, not the figures; `tests/test_simulated_defaults.py` checks the opt-in rule for every guarded entry point.
+On 2026-11-12, in a fresh Python 3.12 environment with `.[dev]`: **3416 passed, 3 skipped** (the three skips are timing-sensitive stop-loss tests marked as such in the host) and **13 benchmarks passed**; CI gives the same 3416 / 3 on Python 3.10, 3.11 and 3.12. The correctness suite needs no database or API key, and no network: it also passes with every outbound connection blocked (checked the same day); the realtime tests set `ALLOW_MOCK_AGENT_DATA` for themselves, because they exercise subscription, broadcasting and bookkeeping on simulated providers, not the figures; `tests/test_simulated_defaults.py` checks the opt-in rule for every guarded entry point.
 
 ## What is and is not verified
 
