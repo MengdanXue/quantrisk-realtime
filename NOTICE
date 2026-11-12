@@ -1,0 +1,40 @@
+quantrisk-realtime
+Copyright (c) 2025-2026 Mengdan Xue
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Provenance
+----------
+This package holds the real-time analytics of TraderX (product name
+"QuantRiskPro V2.0"), a trading-management system prototype the author wrote
+alone in 2025-2026. The work was prompted by a remote freelance enquiry that
+was never concluded: no contract was signed, no payment was made and nothing
+was delivered or accepted, so no rights were transferred. The TraderX
+repository stays private because it also holds the enquirer's requirement
+documents and data files; none of that material is included here.
+
+The code was copied from TraderX backend-python at revision 156d265e on
+2026-11-12, into a fresh git history: src/engine/realtime, src/engine/models
+(without signal_providers.py), src/engine/online_learning, src/datasources,
+src/exchanges, src/observability and src/core/mock_guard.py, plus the tests
+that exercise them. The exact list of what was taken, left out and changed is
+in docs/PROVENANCE.md. Two sibling packages were extracted earlier from the
+same host: quantrisk-core (indicators, strategies, backtesting) and
+agent-runtime-kit (the agent runtime).
+
+Some source files keep the headers they had in TraderX ("Copyright 2025
+TraderX. All rights reserved." / "SPDX-License-Identifier: Apache-2.0");
+most have none. "TraderX" is a name the author used for that project. All
+files in this repository, with or without a header, are distributed under the
+Apache License, Version 2.0.
+
+Not verified: whether the TraderX code itself contains fragments from other
+sources; it was not traced file by file.
+
+Third-party software
+--------------------
+No third-party source code is bundled. Dependencies (numpy, pandas, scipy,
+aiohttp, fastapi; optional websockets, redis, prometheus_client,
+opentelemetry, scikit-learn, xgboost, torch, arch, statsmodels, akshare,
+ccxt, aiosmtplib) are installed separately under their own licenses. The
+exchange and data-source adapters only call public APIs; using them is
+subject to each provider's terms.
