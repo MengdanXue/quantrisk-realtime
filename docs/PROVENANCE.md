@@ -4,7 +4,7 @@ quantrisk-realtime is an extraction, not a rewrite. This page records what came 
 
 ## Source
 
-- **Host project**: TraderX ("QuantRiskPro V2.0"), the author's private trading-management prototype (2025–2026; Java + FastAPI + React), written alone after a remote freelance enquiry that was never concluded. See `NOTICE`.
+- **Host project**: TraderX ("QuantRiskPro V2.0"), the author's private trading-management prototype (2025–2026; Java + FastAPI + React), written alone. See `NOTICE`.
 - **Copied on**: 2026-11-12 from TraderX revision `156d265e` (files taken with `git show 156d265e:<path>`, so the host's uncommitted state played no part), into a fresh git history.
 - **Siblings**: [quantrisk-core](https://github.com/MengdanXue/quantrisk-core) (indicators, strategies, backtesting) and [agent-runtime-kit](https://github.com/MengdanXue/agent-runtime-kit) (agent runtime) were extracted from the same host earlier.
 
@@ -31,7 +31,7 @@ The selection rule: a host package came along only if it imports nothing else fr
 | `src/engine/models/signal_providers.py` | adapters for the host's decision engine V2 (`engine/decision`), which depends on host services and configuration |
 | `src/core/container.py` | the host's dependency-injection container; nothing copied needs it |
 | `tests/engine/test_realtime_risk.py`, `tests/test_oms_ownership.py`, `tests/test_oms_persistence.py`, `tests/test_observability.py`, `tests/integration/*`, `tests/integration_tests/*` that touch these packages | they also import host modules that were not copied (`src.api`, `src.database`, `src.models`, `src.tools`, `src.backtest`, `src.strategies`, `src.main`) |
-| everything else in TraderX | other packages are tied to the host's database, services and configuration, or were extracted into the sibling repositories; the host's requirement documents, data files, uploads and reports are not part of any extraction |
+| everything else in TraderX | other packages are tied to the host's database, services and configuration, or were extracted into the sibling repositories; the host's documents, data files, uploads and reports are not part of any extraction |
 
 ## Changes made during extraction
 
